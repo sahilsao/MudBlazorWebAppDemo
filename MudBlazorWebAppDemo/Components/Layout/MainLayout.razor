@@ -37,13 +37,23 @@
         base.OnInitialized();
 
         _theme = new()
+            
         {
+            Typography = new Typography()
+            {
+                Default = new DefaultTypography()
+                {
+                    FontFamily = new[] { "Raleway", "serif" }
+                }
+            },
             PaletteLight = _lightPalette,
             PaletteDark = _darkPalette,
             LayoutProperties = new LayoutProperties()
-        };
+            
+        };        
+        
     }
-
+   
     private void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
@@ -95,7 +105,7 @@
 
     public string DarkLightModeButtonIcon => _isDarkMode switch
     {
-        true => Icons.Material.Rounded.AutoMode,
+        true => Icons.Material.Filled.WbSunny,
         false => Icons.Material.Outlined.DarkMode,
     };
 
